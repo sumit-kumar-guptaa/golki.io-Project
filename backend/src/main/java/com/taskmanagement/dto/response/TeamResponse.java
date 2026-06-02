@@ -11,6 +11,6 @@ public class TeamResponse {
     private String description;
     private UserResponse createdBy;
     private List<UserResponse> members;
-    private int projectCount;
+    private long projectCount;
     private LocalDateTime createdAt;
 }

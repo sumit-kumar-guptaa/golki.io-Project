@@ -10,6 +10,8 @@ import java.util.*;
 public interface ProjectRepository extends JpaRepository<Project, UUID> {
     List<Project> findByTeamId(UUID teamId);
     List<Project> findByCreatedById(UUID userId);
+
+    long countByTeamId(UUID teamId);
     
     @Query("SELECT p FROM Project p WHERE p.team.id IN " +
            "(SELECT t.id FROM Team t JOIN t.members m WHERE m.id = :userId)")

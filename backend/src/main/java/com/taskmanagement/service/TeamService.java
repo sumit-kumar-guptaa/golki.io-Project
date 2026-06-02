@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TeamService {
     private final TeamRepository teamRepository;
+    private final ProjectRepository projectRepository;
     private final UserRepository userRepository;
     private final UserService userService;
     
@@ -35,7 +36,7 @@ public class TeamService {
     }
     
     public TeamResponse getTeamById(UUID id) {
-        return mapTeam(teamRepository.findById(id)
+        return mapTeam(teamRepository.findByIdWithMembersAndCreator(id)
             .orElseThrow(() -> new ResourceNotFoundException("Team not found")));
     }
     
@@ -65,21 +66,23 @@ public class TeamService {
     }
     
     public List<TeamResponse> getAllTeams() {
-        return teamRepository.findAll().stream().map(this::mapTeam).collect(Collectors.toList());
+        return teamRepository.findAllWithMembersAndCreator().stream()
+            .map(this::mapTeam).collect(Collectors.toList());
     }
     
     private Team findTeam(UUID id) {
-        return teamRepository.findById(id)
+        return teamRepository.findByIdWithMembersAndCreator(id)
             .orElseThrow(() -> new ResourceNotFoundException("Team not found"));
     }
     
     private TeamResponse mapTeam(Team team) {
+        long projectCount = team.getId() == null ? 0 : projectRepository.countByTeamId(team.getId());
         return TeamResponse.builder()
             .id(team.getId()).teamName(team.getTeamName())
             .description(team.getDescription())
             .createdBy(userService.mapUser(team.getCreatedBy()))
             .members(team.getMembers().stream().map(userService::mapUser).collect(Collectors.toList()))
-            .projectCount(team.getProjects() != null ? team.getProjects().size() : 0)
+            .projectCount(projectCount)
             .createdAt(team.getCreatedAt()).build();
     }
 }

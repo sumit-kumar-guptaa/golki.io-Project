@@ -6,9 +6,26 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.*;
 
 public interface TeamRepository extends JpaRepository<Team, UUID> {
-    @Query("SELECT t FROM Team t JOIN t.members m WHERE m.id = :userId")
+    @Query("SELECT DISTINCT t FROM Team t " +
+        "LEFT JOIN FETCH t.members m " +
+        "LEFT JOIN FETCH t.createdBy cb " +
+        "WHERE m.id = :userId")
     List<Team> findTeamsByUserId(UUID userId);
     
-    @Query("SELECT t FROM Team t WHERE t.createdBy.id = :userId")
+    @Query("SELECT DISTINCT t FROM Team t " +
+        "LEFT JOIN FETCH t.members m " +
+        "LEFT JOIN FETCH t.createdBy cb " +
+        "WHERE cb.id = :userId")
     List<Team> findTeamsCreatedBy(UUID userId);
+
+    @Query("SELECT DISTINCT t FROM Team t " +
+        "LEFT JOIN FETCH t.members m " +
+        "LEFT JOIN FETCH t.createdBy cb")
+    List<Team> findAllWithMembersAndCreator();
+
+        @Query("SELECT t FROM Team t " +
+            "LEFT JOIN FETCH t.members m " +
+            "LEFT JOIN FETCH t.createdBy cb " +
+            "WHERE t.id = :id")
+        Optional<Team> findByIdWithMembersAndCreator(UUID id);
 }

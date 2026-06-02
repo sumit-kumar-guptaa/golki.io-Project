@@ -14,9 +14,10 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String teamName;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -29,10 +30,12 @@ public class Team {
         joinColumns = @JoinColumn(name = "team_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     @ToString.Exclude @EqualsAndHashCode.Exclude
+    @Builder.Default
     private Set<User> members = new HashSet<>();
 
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     @ToString.Exclude @EqualsAndHashCode.Exclude
+    @Builder.Default
     private List<Project> projects = new ArrayList<>();
 
     @CreationTimestamp
