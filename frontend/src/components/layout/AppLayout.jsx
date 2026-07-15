@@ -8,6 +8,7 @@ const TITLES = {
   '/projects': 'Projects',
   '/tasks': 'My Tasks',
   '/teams': 'Teams',
+  '/chat': 'Chat',
   '/analytics': 'Analytics',
   '/profile': 'Profile',
 }

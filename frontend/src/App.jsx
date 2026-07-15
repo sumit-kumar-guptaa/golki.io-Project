@@ -13,6 +13,7 @@ import TasksPage from './pages/TasksPage'
 import TeamsPage from './pages/TeamsPage'
 import AnalyticsPage from './pages/AnalyticsPage'
 import ProfilePage from './pages/ProfilePage'
+import ChatPage from './pages/ChatPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="projects/:id"     element={<ProjectDetailPage />} />
             <Route path="tasks"            element={<TasksPage />} />
             <Route path="teams"            element={<TeamsPage />} />
+            <Route path="chat"             element={<ChatPage />} />
             <Route path="analytics"        element={<AnalyticsPage />} />
             <Route path="profile"          element={<ProfilePage />} />
           </Route>

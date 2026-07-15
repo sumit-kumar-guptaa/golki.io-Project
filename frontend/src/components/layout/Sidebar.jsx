@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import { 
-  Zap, LayoutDashboard, FolderKanban, CheckSquare, 
+  Zap, LayoutDashboard, FolderKanban, CheckSquare, MessageCircle,
   Users, BarChart3, Settings, LogOut, User, ChevronLeft
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
@@ -11,6 +11,7 @@ const NAV = [
   { to: '/projects', icon: FolderKanban, label: 'Projects' },
   { to: '/tasks', icon: CheckSquare, label: 'My Tasks' },
   { to: '/teams', icon: Users, label: 'Teams' },
+  { to: '/chat', icon: MessageCircle, label: 'Chat' },
   { to: '/analytics', icon: BarChart3, label: 'Analytics' },
   { to: '/profile', icon: User, label: 'Profile' },
 ]

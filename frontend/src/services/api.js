@@ -106,4 +106,10 @@ export const notificationsAPI = {
   markAllRead: () => api.post('/notifications/read-all', null, { silentError: true }),
 }
 
+// Chat
+export const chatAPI = {
+  getHistory: (projectId, page = 0, size = 50) =>
+    api.get(`/chat/${projectId}/history?page=${page}&size=${size}`),
+}
+
 export default api
