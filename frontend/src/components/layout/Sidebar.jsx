@@ -35,7 +35,7 @@ export default function Sidebar({ collapsed, onToggle }) {
             <div className="w-8 h-8 bg-brand-500 rounded-xl flex items-center justify-center flex-shrink-0">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-display text-lg font-bold text-white">TaskFlow</span>
+            <span className="font-display text-lg font-bold text-white">golki.io</span>
           </div>
         )}
         {collapsed && (

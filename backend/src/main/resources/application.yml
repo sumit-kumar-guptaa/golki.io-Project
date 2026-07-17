@@ -1,9 +1,9 @@
 spring:
   application:
-    name: taskflow-backend
+    name: golki.io-backend
 
   datasource:
-    url: ${DB_URL:jdbc:h2:mem:taskflow;DB_CLOSE_DELAY=-1;MODE=PostgreSQL}
+    url: ${DB_URL:jdbc:h2:mem:golki.io;DB_CLOSE_DELAY=-1;MODE=PostgreSQL}
     username: ${DB_USERNAME:sa}
     password: ${DB_PASSWORD:}
     hikari:
@@ -39,7 +39,7 @@ server:
     include-binding-errors: always
 
 jwt:
-  secret: ${JWT_SECRET:taskflow-super-secret-key-must-be-at-least-256-bits-long-for-hs256}
+  secret: ${JWT_SECRET:golki.io-super-secret-key-must-be-at-least-256-bits-long-for-hs256}
   expiration: ${JWT_EXPIRATION:86400000}
 
 file:

@@ -1,15 +1,15 @@
 services:
   postgres:
     image: postgres:15-alpine
-    container_name: taskflow-postgres
+    container_name: golki.io-postgres
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-taskflow}
+      POSTGRES_DB: ${POSTGRES_DB:-golki.io}
       POSTGRES_USER: ${DB_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-change-me}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-postgres} -d ${POSTGRES_DB:-taskflow}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-postgres} -d ${POSTGRES_DB:-golki.io}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -19,11 +19,11 @@ services:
     build:
       context: ../backend
       dockerfile: Dockerfile
-    container_name: taskflow-backend
+    container_name: golki.io-backend
     expose:
       - "8080"
     environment:
-      - DB_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DB:-taskflow}
+      - DB_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DB:-golki.io}
       - DB_USERNAME=${DB_USERNAME:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-change-me}
       - JWT_SECRET=${JWT_SECRET:-change-this}
@@ -47,7 +47,7 @@ services:
     build:
       context: ../frontend
       dockerfile: Dockerfile
-    container_name: taskflow-frontend
+    container_name: golki.io-frontend
     ports:
       - "${WEB_PORT:-80}:80"
     depends_on:

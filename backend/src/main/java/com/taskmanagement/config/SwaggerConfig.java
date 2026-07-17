@@ -11,10 +11,10 @@ public class SwaggerConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("TaskFlow API")
+                .title("golki.io API")
                 .description("Smart Task & Team Management System API")
                 .version("1.0.0")
-                .contact(new Contact().name("TaskFlow").email("support@taskflow.io")))
+                .contact(new Contact().name("golki.io").email("support@golki.io.io")))
             .addSecurityItem(new SecurityRequirement().addList("Bearer Auth"))
             .components(new Components()
                 .addSecuritySchemes("Bearer Auth",

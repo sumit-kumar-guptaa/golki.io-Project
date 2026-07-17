@@ -1,4 +1,4 @@
-# ⚡ TaskFlow — AI-Powered Smart Task & Team Management System
+# ⚡ golki.io — AI-Powered Smart Task & Team Management System
 
 > Production-grade distributed task management platform with AI Helpdesk, RAG pipeline, and real-time event streaming — built for scale.
 
@@ -13,9 +13,9 @@
 
 ---
 
-## 📌 What is TaskFlow?
+## 📌 What is golki.io?
 
-TaskFlow is a **distributed, microservices-based task and team management system** — think Jira/Trello, but engineered from the ground up with production-grade backend architecture.
+golki.io is a **distributed, microservices-based task and team management system** — think Jira/Trello, but engineered from the ground up with production-grade backend architecture.
 
 What makes it different:
 - **Apache Kafka** for real-time event streaming across microservices
@@ -101,7 +101,7 @@ What makes it different:
 
 ## 🤖 AI Helpdesk — Spring AI + RAG + MCP
 
-The most unique feature of TaskFlow. A fully functional **AI-powered helpdesk** that can answer questions about your tasks, projects, and team using your actual data — not just static documentation.
+The most unique feature of golki.io. A fully functional **AI-powered helpdesk** that can answer questions about your tasks, projects, and team using your actual data — not just static documentation.
 
 ### How the RAG Pipeline Works
 
@@ -217,7 +217,7 @@ Cache invalidation is **event-driven** — Kafka consumer in each service invali
 
 ## 🔄 Concurrent Request Handling
 
-TaskFlow is designed to handle high-concurrency scenarios in production:
+golki.io is designed to handle high-concurrency scenarios in production:
 
 - **Tomcat thread pool** tuned: `server.tomcat.threads.max=200`, `min-spare=20`
 - **HikariCP connection pool**: `maximum-pool-size=20` per service
@@ -280,16 +280,16 @@ pipeline {
 ## 📁 Project Structure
 
 ```
-taskflow/
+golki.io/
 ├── auth-service/
-│   └── src/main/java/com/taskflow/auth/
+│   └── src/main/java/com/golki.io/auth/
 │       ├── controller/        # AuthController
 │       ├── service/           # AuthService, JwtService
 │       ├── security/          # JwtAuthFilter, SecurityConfig
 │       └── entity/            # User, Role
 │
 ├── task-service/
-│   └── src/main/java/com/taskflow/task/
+│   └── src/main/java/com/golki.io/task/
 │       ├── controller/        # TaskController, CommentController
 │       ├── service/           # TaskService (async Kafka publish)
 │       ├── kafka/             # TaskEventProducer
@@ -297,13 +297,13 @@ taskflow/
 │       └── entity/            # Task, Comment, ActivityLog
 │
 ├── team-service/
-│   └── src/main/java/com/taskflow/team/
+│   └── src/main/java/com/golki.io/team/
 │       ├── controller/        # TeamController, ProjectController
 │       ├── service/           # TeamService, ProjectService
 │       └── entity/            # Team, Project, TeamMember
 │
 ├── ai-helpdesk-service/
-│   └── src/main/java/com/taskflow/ai/
+│   └── src/main/java/com/golki.io/ai/
 │       ├── controller/        # HelpDeskController (chat endpoint)
 │       ├── rag/               # RagPipelineService, VectorIndexer
 │       ├── mcp/               # McpServerConfig, TaskTools
@@ -311,7 +311,7 @@ taskflow/
 │       └── config/            # SpringAiConfig, ChatClientConfig
 │
 ├── notification-service/
-│   └── src/main/java/com/taskflow/notification/
+│   └── src/main/java/com/golki.io/notification/
 │       ├── kafka/             # TaskEventConsumer, TeamEventConsumer
 │       └── service/           # EmailNotificationService
 │
@@ -347,8 +347,8 @@ taskflow/
 ### 1. Clone & Configure
 
 ```bash
-git clone https://github.com/sumit-kumar-guptaa/taskflow.git
-cd taskflow
+git clone https://github.com/sumit-kumar-guptaa/golki.io.git
+cd golki.io
 cp .env.example .env
 # Fill in DB_URL, JWT_SECRET, GEMINI_API_KEY (or OpenAI key)
 ```

@@ -23,7 +23,7 @@ export default function RegisterPage() {
             <div className="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display text-xl font-bold text-white">TaskFlow</span>
+            <span className="font-display text-xl font-bold text-white">golki.io</span>
           </Link>
           <h1 className="font-display text-3xl font-bold text-white mb-2">Create your account</h1>
           <p className="text-[#8888aa]">Start managing tasks like a pro</p>

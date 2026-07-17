@@ -16,7 +16,7 @@ const TITLES = {
 export default function AppLayout() {
   const [collapsed, setCollapsed] = useState(false)
   const location = useLocation()
-  const title = TITLES[location.pathname] || 'TaskFlow'
+  const title = TITLES[location.pathname] || 'golki.io'
 
   return (
     <div className="flex h-screen overflow-hidden">

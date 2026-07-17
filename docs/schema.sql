@@ -1,5 +1,5 @@
 -- ========================================================
--- TaskFlow Database Schema for Supabase PostgreSQL
+-- golki.io Database Schema for Supabase PostgreSQL
 -- ========================================================
 
 -- Enable UUID extension
@@ -129,7 +129,7 @@ CREATE TRIGGER trg_comments_updated BEFORE UPDATE ON comments FOR EACH ROW EXECU
 -- SAMPLE DATA (Optional)
 -- =====================
 INSERT INTO users (name, email, password, role, job_title) VALUES
-('Admin User', 'admin@taskflow.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'ADMIN', 'System Admin'),
-('Alice Johnson', 'alice@taskflow.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'TEAM_LEAD', 'Engineering Lead'),
-('Bob Smith', 'bob@taskflow.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'MEMBER', 'Frontend Developer');
+('Admin User', 'admin@golki.io.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'ADMIN', 'System Admin'),
+('Alice Johnson', 'alice@golki.io.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'TEAM_LEAD', 'Engineering Lead'),
+('Bob Smith', 'bob@golki.io.io', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'MEMBER', 'Frontend Developer');
 -- Default password for sample data: "password123"

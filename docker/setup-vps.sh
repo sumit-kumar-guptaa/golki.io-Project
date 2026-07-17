@@ -43,4 +43,4 @@ fi
 "${COMPOSE_CMD[@]}" --env-file .env -f docker/docker-compose.yml up -d --build
 "${COMPOSE_CMD[@]}" --env-file .env -f docker/docker-compose.yml ps
 
-echo "TaskFlow is up. Open http://<your-server-ip>:${WEB_PORT:-80}"
+echo "golki.io is up. Open http://<your-server-ip>:${WEB_PORT:-80}"

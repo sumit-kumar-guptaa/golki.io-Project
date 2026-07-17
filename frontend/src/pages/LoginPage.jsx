@@ -31,7 +31,7 @@ export default function LoginPage() {
           <div className="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center">
             <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="font-display text-xl font-bold text-white">TaskFlow</span>
+          <span className="font-display text-xl font-bold text-white">golki.io</span>
         </div>
         
         <div className="relative">
@@ -41,7 +41,7 @@ export default function LoginPage() {
               Ship faster.
             </span>
           </h2>
-          <p className="text-[#8888aa]">Join 10,000+ teams managing their projects with TaskFlow.</p>
+          <p className="text-[#8888aa]">Join 10,000+ teams managing their projects with golki.io.</p>
           
           <div className="mt-12 space-y-4">
             {[
@@ -60,7 +60,7 @@ export default function LoginPage() {
           </div>
         </div>
         
-        <div className="relative text-[#8888aa] text-xs">© 2024 TaskFlow</div>
+        <div className="relative text-[#8888aa] text-xs">© 2024 golki.io</div>
       </div>
 
       {/* Right panel */}
@@ -68,7 +68,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h1 className="font-display text-3xl font-bold text-white mb-2">Welcome back</h1>
-            <p className="text-[#8888aa]">Sign in to your TaskFlow account</p>
+            <p className="text-[#8888aa]">Sign in to your golki.io account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">

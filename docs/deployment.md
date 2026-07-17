@@ -1,4 +1,4 @@
-# TaskFlow — Deployment Guide
+# golki.io — Deployment Guide
 
 ## Prerequisites
 - Java 17+
@@ -36,7 +36,7 @@ mvn spring-boot:run
 ### Production Build
 ```bash
 mvn clean package -DskipTests
-java -jar target/taskflow-backend-1.0.0.jar
+java -jar target/golki.io-backend-1.0.0.jar
 ```
 
 ### Environment Variables Reference
@@ -103,7 +103,7 @@ docker-compose -f docker/docker-compose.yml down
 ### Backend — Render
 1. New Web Service → GitHub repo
 2. Build: `mvn clean package -DskipTests`
-3. Start: `java -jar target/taskflow-backend-1.0.0.jar`
+3. Start: `java -jar target/golki.io-backend-1.0.0.jar`
 4. Add env vars
 
 ### Frontend — Vercel
@@ -146,6 +146,6 @@ location /api {
 
 ## 7. Default Admin Credentials
 On first startup, an admin account is created automatically:
-- **Email:** `admin@taskflow.io`
+- **Email:** `admin@golki.io.io`
 - **Password:** `admin123`
 - **⚠️ Change this immediately in production!**

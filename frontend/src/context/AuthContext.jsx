@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', token)
       localStorage.setItem('user', JSON.stringify(userData))
       setUser(userData)
-      toast.success(`Welcome to TaskFlow, ${userData.name}!`)
+      toast.success(`Welcome to golki.io, ${userData.name}!`)
       return true
     } catch (err) {
       return false

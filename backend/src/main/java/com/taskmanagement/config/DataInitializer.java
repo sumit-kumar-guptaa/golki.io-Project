@@ -19,17 +19,17 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (!userRepository.existsByEmail("admin@taskflow.io")) {
+        if (!userRepository.existsByEmail("admin@golki.io.io")) {
             User admin = User.builder()
                     .name("Admin User")
-                    .email("admin@taskflow.io")
+                    .email("admin@golki.io.io")
                     .password(passwordEncoder.encode("admin123"))
                     .role(Role.ADMIN)
                     .jobTitle("System Administrator")
-                    .bio("TaskFlow system administrator")
+                    .bio("golki.io system administrator")
                     .build();
             userRepository.save(admin);
-            log.info("✅ Default admin created: admin@taskflow.io / admin123");
+            log.info("✅ Default admin created: admin@golki.io.io / admin123");
         }
     }
 }

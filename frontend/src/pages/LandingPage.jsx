@@ -16,16 +16,16 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { value: '10K+', label: 'Teams Using TaskFlow' },
+  { value: '10K+', label: 'Teams Using golki.io' },
   { value: '99.9%', label: 'Uptime Guarantee' },
   { value: '2M+', label: 'Tasks Completed' },
   { value: '4.9★', label: 'Average Rating' },
 ]
 
 const TESTIMONIALS = [
-  { name: 'Sarah Chen', role: 'Engineering Lead @ Stripe', text: 'TaskFlow transformed how our team operates. The Kanban board and analytics are incredibly powerful.', avatar: 'SC' },
-  { name: 'Marcus Williams', role: 'CTO @ TechStartup', text: 'We shipped 40% faster after switching to TaskFlow. The team visibility features are unmatched.', avatar: 'MW' },
-  { name: 'Priya Sharma', role: 'Product Manager @ Notion', text: 'Clean UI, powerful features, zero learning curve. TaskFlow is exactly what our team needed.', avatar: 'PS' },
+  { name: 'Sarah Chen', role: 'Engineering Lead @ Stripe', text: 'golki.io transformed how our team operates. The Kanban board and analytics are incredibly powerful.', avatar: 'SC' },
+  { name: 'Marcus Williams', role: 'CTO @ TechStartup', text: 'We shipped 40% faster after switching to golki.io. The team visibility features are unmatched.', avatar: 'MW' },
+  { name: 'Priya Sharma', role: 'Product Manager @ Notion', text: 'Clean UI, powerful features, zero learning curve. golki.io is exactly what our team needed.', avatar: 'PS' },
 ]
 
 function FloatingCard({ style, children }) {
@@ -72,7 +72,7 @@ export default function LandingPage() {
           <div className="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center">
             <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="font-display text-xl font-bold text-white">TaskFlow</span>
+          <span className="font-display text-xl font-bold text-white">golki.io</span>
         </div>
         
         <div className="hidden md:flex items-center gap-8 text-sm text-[#8888aa]">
@@ -136,7 +136,7 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
-            <span>Join <strong className="text-white">10,000+</strong> teams already using TaskFlow</span>
+            <span>Join <strong className="text-white">10,000+</strong> teams already using golki.io</span>
           </div>
         </div>
 
@@ -150,7 +150,7 @@ export default function LandingPage() {
               <div className="w-3 h-3 rounded-full bg-amber-500/70" />
               <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
               <div className="flex-1 ml-4 bg-[#0a0a0f] rounded-lg px-4 py-1.5 text-xs text-[#8888aa] text-center font-mono">
-                app.taskflow.io/dashboard
+                app.golki.io.io/dashboard
               </div>
             </div>
             
@@ -281,7 +281,7 @@ export default function LandingPage() {
             Ready to ship faster?
           </h2>
           <p className="text-[#8888aa] mb-8 max-w-lg mx-auto">
-            Join thousands of teams who trust TaskFlow to manage their projects, tasks, and collaboration.
+            Join thousands of teams who trust golki.io to manage their projects, tasks, and collaboration.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link to="/register" className="btn-primary text-base px-8 py-3.5 flex items-center gap-2">
@@ -302,9 +302,9 @@ export default function LandingPage() {
             <div className="w-8 h-8 bg-brand-500 rounded-xl flex items-center justify-center">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-display font-bold text-white">TaskFlow</span>
+            <span className="font-display font-bold text-white">golki.io</span>
           </div>
-          <div className="text-[#8888aa] text-sm">© 2024 TaskFlow. All rights reserved.</div>
+          <div className="text-[#8888aa] text-sm">© 2024 golki.io. All rights reserved.</div>
           <div className="flex items-center gap-4 text-[#8888aa]">
             <a href="#" className="hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
             <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
