@@ -25,9 +25,21 @@ export default {
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-delay': 'float 6s ease-in-out infinite 2s',
         'glow': 'glow 2s ease-in-out infinite alternate',
         'slide-up': 'slideUp 0.3s ease-out',
         'fade-in': 'fadeIn 0.4s ease-out',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'fade-in-left': 'fadeInLeft 0.6s ease-out forwards',
+        'fade-in-right': 'fadeInRight 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.5s ease-out forwards',
+        'gradient-x': 'gradientX 3s ease infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
         float: {
@@ -45,7 +57,43 @@ export default {
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
-        }
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(30px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        fadeInLeft: {
+          '0%': { opacity: 0, transform: 'translateX(-30px)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        fadeInRight: {
+          '0%': { opacity: 0, transform: 'translateX(30px)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: 0, transform: 'scale(0.9)' },
+          '100%': { opacity: 1, transform: 'scale(1)' },
+        },
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(101,80,247,0.2), 0 0 60px rgba(101,80,247,0.1)' },
+          '50%': { boxShadow: '0 0 30px rgba(101,80,247,0.4), 0 0 80px rgba(101,80,247,0.2)' },
+        },
+        bounceSubtle: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       }
     },
   },
